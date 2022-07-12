@@ -1,0 +1,113 @@
+$left-color: #242e4d;
+$right-color: #897e79;
+$green-dark: #35c3c1;
+$green-light: #00d6b7;
+$gray: #8f8f8f;
+$gray-light: #f5f6f8;
+* {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: #1CB5E0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    font-family: 'Roboto', helvetica, arial, sans-serif;
+    font-size: 1.5em;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        // Noise effect
+        opacity: .3;
+    }
+}
+
+.login-form {
+    width: 100%;
+    padding: 2em;
+    position: relative;
+    background-color: #897e79;
+    &:before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background: linear-gradient( to right, $green-dark, $green-light);
+    }
+    @media screen and (min-width: 600px) {
+        width: 50vw;
+        max-width: 15em;
+    }
+}
+
+.flex-row {
+    display: flex;
+    margin-bottom: 1em;
+}
+
+.lf--label {
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $gray-light;
+    cursor: pointer;
+}
+
+.lf--input {
+    flex: 1;
+    padding: 1em;
+    border: 0;
+    color: $gray;
+    font-size: 1rem;
+    &:focus {
+        outline: none;
+        transition: transform .15s ease;
+        transform: scale(1.1);
+    }
+}
+
+.lf--submit {
+    display: block;
+    padding: 1em;
+    width: 100%;
+    background: linear-gradient( to right, $green-dark, $green-light);
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: .75em;
+    font-weight: 600;
+    text-shadow: 0 1px 0 rgba(black, .2);
+    &:focus {
+        outline: none;
+        transition: transform .15s ease;
+        transform: scale(1.1);
+    }
+}
+
+.lf--forgot {
+    margin-top: 1em;
+    color: $green-light;
+    font-size: .65em;
+    text-align: center;
+    position: relative;
+}
+
+::placeholder {
+    color: $gray;
+}
